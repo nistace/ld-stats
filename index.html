@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="EN">
+<head>
+    <title>LD Stats</title>
+    <link rel="icon" href="./resources/img/icon.png">
+    <meta charset="UTF-8">
+    <meta name="author" content="Nathan Istace">
+    <link rel="stylesheet" href="./resources/css/index.css">
+    <script src="./resources/js/libs/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <link href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<div class="top-bar">
+    <div class="search">
+        <input id="launch-name" type="text" placeholder="Enter your @ here"/>
+        <button id="launch-btn">Search</button>
+        <button id="goto-ld">LD Page</button>
+    </div>
+
+    <div class="value-tabs">
+        <button class="select-type current" data-type="absolute-ranking">Absolute Ranking</button>
+        <button class="select-type" data-type="complete-ranking">Detailed Ranking</button>
+        <button class="select-type" data-type="relative-ranking">Relative Ranking</button>
+        <button class="select-type" data-type="score">Average Score</button>
+        <button class="select-type" data-type="self-ranking">Personal Ranking</button>
+    </div>
+    <table class="header">
+        <thead>
+        <tr>
+            <td colspan="2"></td>
+            <td></td>
+            <td class="number" data-grade="1"><span class="legend-color overall"></span>Overall</td>
+            <td class="number" data-grade="2"><span class="legend-color fun"></span>Fun</td>
+            <td class="number" data-grade="3"><span class="legend-color innovation"></span>Innovation</td>
+            <td class="number" data-grade="4"><span class="legend-color theme"></span>Theme</td>
+            <td class="number" data-grade="5"><span class="legend-color graphics"></span>Graphics</td>
+            <td class="number" data-grade="6"><span class="legend-color audio"></span>Audio</td>
+            <td class="number" data-grade="7"><span class="legend-color humor"></span>Humor</td>
+            <td class="number" data-grade="8"><span class="legend-color mood"></span>Mood</td>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+</div>
+
+
+<table id="table-rankings">
+    <tbody></tbody>
+</table>
+
+
+<div class="ct-chart"></div>
+
+
+<script src="./resources/js/index.js"></script>
+
+</html>

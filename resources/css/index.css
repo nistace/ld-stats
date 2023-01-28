@@ -1,0 +1,154 @@
+html {
+    background: #1F2429;
+}
+
+body {
+    margin:4px;
+}
+
+
+
+table {
+    margin : 4px 0;
+    background: #F79122;
+    width:100%;
+}
+
+
+table.header {
+ margin: 48px 0;    
+}
+
+table#table-rankings {
+    margin-top:94px;
+}
+
+table thead {
+    font-weight: bold;
+}
+
+td {
+    padding:12px;
+}
+
+
+table tbody td {
+    background:white;
+}
+
+table tbody tr:hover td {
+    background: #eee;
+}
+
+thead td.number {
+    text-align: left;
+    width:100px;
+}
+
+thead td.number:hover {
+   cursor: pointer;
+}
+
+tbody td.number {
+    text-align: right;
+    width:100px;
+}
+
+td.number.best{
+    background:#bf8;
+}
+
+
+input[type=text] {
+    background: white;
+    border: #F79122 2px solid ;
+    height:12px;
+    padding: 12px;
+    margin: 0;
+}
+
+
+input[type=text]:focus {
+    outline: 0;
+}
+
+
+button {
+    background: #F79122;
+    border: none;
+    margin: 0;
+    padding: 12px;
+    cursor: pointer;
+}
+
+button:hover{
+    filter:brightness(110%);
+}
+
+button.select-type.current {
+    background: #49f;
+}
+
+.ct-chart {
+    margin : 4px 0;
+}
+
+.ct-chart-line {
+    background:white;
+    text-align: center;
+    border: #F79122 2px solid ;
+}
+
+span.legend-color {
+    display: inline-block;
+    border : 3px solid black;
+    border-radius: 12px;
+    width: 12px;
+    height: 12px;
+    background:white;
+    vertical-align: bottom;
+    margin-right : 4px;
+}
+
+
+
+span.legend-color.overall { background:#D70206; }
+span.legend-color.fun { background:#F05B4F; }
+span.legend-color.innovation { background:#F4C63D; }
+span.legend-color.theme { background:#D17905; }
+span.legend-color.graphics { background:#453D3F; }
+span.legend-color.audio { background:#59922B; }
+span.legend-color.humor { background:#0544D3; }
+span.legend-color.mood { background:#6B0392; }
+
+td.number.inactive span.legend-color {
+    background:black;
+}
+
+thead td.number:hover span.legend-color {
+    border-color : white ;
+}
+
+
+.top-bar{
+    position:fixed;
+    top:0;
+    width:calc(100% - 8px);
+    height: 48px;
+    background: #1F2429;
+    border-bottom: #F79122 2px solid ;
+}
+
+.value-tabs {
+    position: fixed;
+    float: right;
+    right: 4px;
+    top:4px;
+}
+
+.search {
+    position:fixed;
+    float:left;
+    left:4px;
+    top:4px;
+}
