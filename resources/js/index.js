@@ -1,7 +1,17 @@
-$("#launch-btn").on("click", Init);
+$("#launch-btn").on("click", loadUserData);
+$(document).on("keypress", loadUserDataOnEnterPress);
 $("button.select-type").on("click", changeValueType);
 $("#launch-name").on("change", fixName);
 $("td[data-grade]").click(toggleCategory);
+
+
+$(function () {
+    const name = new URLSearchParams(window.location.search).get('n');
+    if (name !== undefined && name !== "") {
+        $("#launch-name").val(name);
+        loadUserData();
+    }
+});
 
 function toggleCategory() {
     if ($(this).hasClass("inactive")) {
@@ -42,13 +52,21 @@ function changeValueType() {
 }
 
 
-function Init() {
+function loadUserDataOnEnterPress(e) {
+    if (e.which === 13) {
+        loadUserData();
+    }
+}
+
+function loadUserData() {
     fixName();
+    const userName = $("#launch-name").val();
+    window.history.pushState({}, userName, `?n=${userName}`);
     valueType = $("button.select-type.current").data("type");
     $("#launch-name, #launch-btn").attr("disabled", "disabled");
     $("#table-rankings tbody").empty();
     $(".ct-chart").empty();
-    $.get({url: `https://api.ldjam.com/vx/node2/walk/1/users/${$("#launch-name").val()}/games?node=&parent=&superparent=&author=`}).done(onUserDataReceived);
+    $.get({url: `https://api.ldjam.com/vx/node2/walk/1/users/${userName}/games?node=&parent=&superparent=&author=`}).done(onUserDataReceived);
 }
 
 function onUserDataReceived(data) {
