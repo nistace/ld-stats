@@ -122,7 +122,7 @@ function onEventDataReceived(data) {
 function onGameCountReceived(data) {
     let td = $(`tr[data-event='${data.root}'] td[data-type='${data.method[0]}']`);
     if (data.feed !== undefined && data.feed.length > 0) {
-        $(td).attr("data-count", data.feed[0].score);
+        $(td).attr("data-count", data.feed[0].value);
     }
     evalSelfRanking();
     refreshAllValues();
